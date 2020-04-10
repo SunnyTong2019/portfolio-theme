@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch scss -o dist/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunnyTong2019/portfolio-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunnyTong2019/portfolio-theme/issues"
+  },
+  "homepage": "https://github.com/SunnyTong2019/portfolio-theme#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
