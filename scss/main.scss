@@ -1,6 +1,71 @@
-$primary-color: pink;
+$primary-color: #444;
+$secondary-color: Orange;
 
 body {
-  background: $primary-color;
-  color: grey;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  overflow: hidden;
+  color: white;
+}
+
+main {
+  background: rgba($primary-color, 0.9);
+  z-index: 1;
+  height: 100vh;
+}
+
+#home-page {
+  padding: 25vh 10vw;
+
+  &::after {
+    content: "";
+    background: url("../img/background.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-top: 40px;
+
+  li {
+    padding-right: 15px;
+
+    a {
+      color: white;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.desc {
+  background: darken($primary-color, 0.5);
+  padding: 10px 20px;
+}
+
+.text-large {
+  font-size: 90px;
+}
+
+.text-medium {
+  font-size: 25px;
+}
+
+.text-secondary {
+  color: $secondary-color;
 }
