@@ -8,6 +8,24 @@ body {
   color: white;
 }
 
+a {
+  color: white;
+}
+
+main {
+  background: rgba($primary-color, 0.9);
+  z-index: 1;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 0;
+}
+
 .text-large {
   font-size: 90px;
 }
@@ -21,14 +39,9 @@ body {
   color: $secondary-color;
 }
 
-a {
-  color: white;
-}
-
-main {
-  background: rgba($primary-color, 0.9);
-  z-index: 1;
-  height: 100vh;
+.desc {
+  background: rgba(lighten($primary-color, 0.5), 0.5);
+  padding: 10px 20px;
 }
 
 // home page
@@ -46,30 +59,85 @@ main {
     bottom: 0;
     right: 0;
   }
-}
 
-h1 {
-  margin-bottom: 0;
-}
+  .social-icons {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin-top: 40px;
 
-.desc {
-  background: darken($primary-color, 0.5);
-  padding: 10px 20px;
-}
+    li {
+      padding-right: 15px;
 
-.social-icons {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin-top: 40px;
-
-  li {
-    padding-right: 15px;
-
-    a {
-      &:hover {
-        color: $secondary-color;
+      a {
+        &:hover {
+          color: $secondary-color;
+        }
       }
     }
   }
+}
+
+// About Page
+#about-page {
+  padding: 5vh 5vw;
+
+  .about-content {
+    display: grid;
+    grid-template-areas:
+      "bioimage biodesc biodesc"
+      "job1 job2 job3";
+    grid-gap: 40px 40px;
+
+    .bio-img {
+      grid-area: bioimage;
+      margin: 0 auto;
+      width: 50%;
+
+      img {
+        width: 100%;
+        border: 3px $secondary-color solid;
+        border-radius: 50%;
+      }
+    }
+
+    .bio-desc {
+      grid-area: biodesc;
+      font-size: 22px;
+    }
+
+    .job1 {
+      grid-area: job1;
+      background-color: rgba(lighten($primary-color, 0.5), 0.5);
+      border-bottom: 3px $secondary-color solid;
+      padding: 10px;
+    }
+
+    .job2 {
+      grid-area: job2;
+      background-color: rgba(lighten($primary-color, 0.5), 0.5);
+      border-bottom: 3px $secondary-color solid;
+      padding: 10px;
+    }
+
+    .job3 {
+      grid-area: job3;
+      background-color: rgba(lighten($primary-color, 0.5), 0.5);
+      border-bottom: 3px $secondary-color solid;
+      padding: 10px;
+    }
+  }
+}
+
+// footer
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding-top: 40px;
+  background: darken($primary-color, 10);
 }

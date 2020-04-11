@@ -11,6 +11,7 @@
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+  @include easeOut();
 
   .nav-line {
     height: 3px;
@@ -18,10 +19,12 @@
     background-color: white;
     z-index: 3;
     margin: 3px;
-    @include easeOut();
   }
 
   &.close {
+    transform: rotate(180deg);
+
+    // use line 1 and line 2 to make a X, hide line 3
     .nav-line:nth-child(1) {
       transform: rotate(45deg);
     }
