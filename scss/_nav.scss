@@ -1,0 +1,111 @@
+// nav
+.nav-button {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+
+  .nav-line {
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    z-index: 3;
+    margin: 3px;
+    @include easeOut();
+  }
+
+  &.close {
+    .nav-line:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    .nav-line:nth-child(2) {
+      transform: translate(-1px, -9px) rotate(-45deg);
+    }
+    .nav-line:nth-child(3) {
+      display: none;
+    }
+  }
+}
+
+.nav-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  .nav-branding {
+    background: rgba($primary-color, 0.9);
+    width: 50%;
+    transform: translate(0, 100%);
+    @include easeOut();
+
+    &.show {
+      transform: translate(0, 0);
+    }
+
+    .nav-img {
+      margin: 33vh auto;
+      width: 33%;
+      height: 33vh;
+
+      img {
+        width: 100%;
+        border: 3px $secondary-color solid;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .nav-menu {
+    width: 50%;
+    background: darken($primary-color, 5);
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, -100%);
+    @include easeOut();
+
+    &.show {
+      transform: translate(0, 0);
+    }
+
+    .nav-item {
+      padding: 20px;
+      transform: translate(100%, 0);
+      @include easeOut();
+
+      &.show {
+        transform: translate(0, 0);
+      }
+
+      .nav-link {
+        text-decoration: none;
+        font-size: 30px;
+        text-transform: uppercase;
+        @include easeOut();
+
+        &:hover {
+          color: $secondary-color;
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
