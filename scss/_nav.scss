@@ -1,4 +1,4 @@
-// nav
+// nav button
 .nav-button {
   position: absolute;
   top: 25px;
@@ -37,6 +37,7 @@
   }
 }
 
+//nav content
 .nav-content {
   position: absolute;
   top: 0;
@@ -51,9 +52,13 @@
   }
 
   .nav-branding {
+    position: relative;
     background: rgba($primary-color, 0.9);
     width: 50%;
-    transform: translate(0, 100%);
+    transform: translate(
+      0,
+      100%
+    ); //put the element to the bottom, so when show, it comes from bottom to top
     @include easeOut();
 
     &.show {
@@ -61,9 +66,11 @@
     }
 
     .nav-img {
-      margin: 33vh auto;
-      width: 33%;
-      height: 33vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      //above 4 items combined will center the element responsively and change element size
 
       img {
         width: 100%;
@@ -75,14 +82,18 @@
 
   .nav-menu {
     width: 50%;
-    background: darken($primary-color, 5);
+    background: rgba(darken($primary-color, 5), 0.9);
     margin: 0;
+    padding-left: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translate(0, -100%);
+    transform: translate(
+      0,
+      -100%
+    ); //put the element to the top, so when show, it comes from top to bottom
     @include easeOut();
 
     &.show {
@@ -91,7 +102,10 @@
 
     .nav-item {
       padding: 20px;
-      transform: translate(100%, 0);
+      transform: translate(
+        200%,
+        0
+      ); //put the element to the right, so when show, it comes from right to left
       @include easeOut();
 
       &.show {
