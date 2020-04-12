@@ -10,15 +10,19 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 main {
   background: rgba($primary-color, 0.9);
   z-index: 1;
   height: 100vh;
+  overflow: auto;
+  padding: 100px 50px;
 }
 
 h1 {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -79,57 +83,105 @@ h3 {
 }
 
 // About Page
-#about-page {
-  padding: 5vh 5vw;
+.about-content {
+  display: grid;
+  grid-template-areas:
+    "bioimage biodesc biodesc"
+    "job1 job2 job3";
+  grid-gap: 40px 40px;
 
-  .about-content {
-    display: grid;
-    grid-template-areas:
-      "bioimage biodesc biodesc"
-      "job1 job2 job3";
-    grid-gap: 40px 40px;
+  .bio-img {
+    grid-area: bioimage;
+    margin: 0 auto;
+    width: 50%;
 
-    .bio-img {
-      grid-area: bioimage;
-      margin: 0 auto;
-      width: 50%;
+    img {
+      width: 100%;
+      border: 3px $secondary-color solid;
+      border-radius: 50%;
+    }
+  }
+
+  .bio-desc {
+    grid-area: biodesc;
+    font-size: 22px;
+  }
+
+  .job1 {
+    grid-area: job1;
+    background-color: rgba(lighten($primary-color, 0.5), 0.5);
+    border-bottom: 3px $secondary-color solid;
+    padding: 10px;
+  }
+
+  .job2 {
+    grid-area: job2;
+    background-color: rgba(lighten($primary-color, 0.5), 0.5);
+    border-bottom: 3px $secondary-color solid;
+    padding: 10px;
+  }
+
+  .job3 {
+    grid-area: job3;
+    background-color: rgba(lighten($primary-color, 0.5), 0.5);
+    border-bottom: 3px $secondary-color solid;
+    padding: 10px;
+  }
+}
+
+// work page
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .project {
+    width: 24%;
+    margin-bottom: 20px;
+
+    .project-img {
+      border: 3px white solid;
+      height: 260px;
+      margin-bottom: 8px;
+      @include easeOut();
 
       img {
         width: 100%;
-        border: 3px $secondary-color solid;
-        border-radius: 50%;
+        height: 100%;
+      }
+
+      &:hover {
+        border-color: $secondary-color;
+        opacity: 0.5;
       }
     }
 
-    .bio-desc {
-      grid-area: biodesc;
-      font-size: 22px;
-    }
+    .btn {
+      margin: 5px 0;
+      height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
 
-    .job1 {
-      grid-area: job1;
-      background-color: rgba(lighten($primary-color, 0.5), 0.5);
-      border-bottom: 3px $secondary-color solid;
-      padding: 10px;
-    }
+      &-light {
+        background: lightgray;
+        color: black;
+      }
 
-    .job2 {
-      grid-area: job2;
-      background-color: rgba(lighten($primary-color, 0.5), 0.5);
-      border-bottom: 3px $secondary-color solid;
-      padding: 10px;
-    }
+      &-dark {
+        background: darken($primary-color, 10);
 
-    .job3 {
-      grid-area: job3;
-      background-color: rgba(lighten($primary-color, 0.5), 0.5);
-      border-bottom: 3px $secondary-color solid;
-      padding: 10px;
+        &:hover {
+          color: black;
+        }
+      }
+
+      &:hover {
+        background-color: $secondary-color;
+      }
     }
   }
 }
 
-// footer
 footer {
   position: fixed;
   left: 0;
@@ -138,6 +190,9 @@ footer {
   width: 100%;
   color: white;
   text-align: center;
-  padding-top: 40px;
   background: darken($primary-color, 10);
+
+  p {
+    margin-top: 20px;
+  }
 }
