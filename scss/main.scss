@@ -4,8 +4,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  overflow: hidden;
   color: white;
+  overflow: hidden;
 }
 
 a {
@@ -16,9 +16,6 @@ a {
 main {
   background: rgba($primary-color, 0.9);
   z-index: 1;
-  height: 100vh;
-  overflow: auto;
-  padding: 100px 50px;
 }
 
 h1 {
@@ -51,10 +48,11 @@ h3 {
 // home page
 #home-page {
   padding: 25vh 10vw;
+  height: 100vh;
 
   &::after {
     content: "";
-    background: url("../img/background.jpg") no-repeat center center;
+    background: url("../img/background.jpg");
     background-size: cover;
     z-index: -1;
     position: absolute;
@@ -83,6 +81,11 @@ h3 {
 }
 
 // About Page
+#about-page {
+  padding: 80px 50px;
+  height: calc(100vh - 240px);
+}
+
 .about-content {
   display: grid;
   grid-template-areas:
@@ -130,6 +133,12 @@ h3 {
 }
 
 // work page
+#work-page {
+  padding: 80px 50px;
+  height: calc(100vh - 240px);
+  overflow: auto;
+}
+
 .projects {
   display: flex;
   flex-wrap: wrap;
@@ -182,17 +191,11 @@ h3 {
   }
 }
 
+// footer
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
+  height: 80px;
   color: white;
   text-align: center;
   background: darken($primary-color, 10);
-
-  p {
-    margin-top: 20px;
-  }
+  line-height: 80px;
 }
