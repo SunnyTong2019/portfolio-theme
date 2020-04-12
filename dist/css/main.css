@@ -210,6 +210,28 @@ h3 {
       .projects .project .btn:hover {
         background-color: Orange; }
 
+#contact-page {
+  padding: 80px 50px;
+  height: calc(100vh - 240px); }
+  #contact-page .contact-content {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+    #contact-page .contact-content .contact-item {
+      border: 3px white solid;
+      margin-bottom: 50px;
+      padding: 30px;
+      transition: all 0.5s ease-out; }
+      #contact-page .contact-content .contact-item h3 {
+        margin: 0; }
+      #contact-page .contact-content .contact-item:hover {
+        transform: scale(0.9);
+        background-color: Orange; }
+        #contact-page .contact-content .contact-item:hover h3,
+        #contact-page .contact-content .contact-item:hover .text-secondary {
+          color: black; }
+
 footer {
   height: 80px;
   color: white;

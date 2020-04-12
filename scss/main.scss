@@ -191,6 +191,40 @@ h3 {
   }
 }
 
+//contact page
+#contact-page {
+  padding: 80px 50px;
+  height: calc(100vh - 240px);
+
+  .contact-content {
+    display: flex;
+    font-size: 25px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    .contact-item {
+      border: 3px white solid;
+      margin-bottom: 50px;
+      padding: 30px;
+      @include easeOut();
+
+      h3 {
+        margin: 0;
+      }
+
+      &:hover {
+        transform: scale(0.9);
+        background-color: $secondary-color;
+
+        h3,
+        .text-secondary {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
 // footer
 footer {
   height: 80px;
