@@ -275,7 +275,7 @@ footer {
       height: 75%;
       transform: translate(-100%, 0); }
   .nav-item {
-    transform: translate(100%, 0); }
+    transform: translate(-300%, 0); }
   .text-large {
     font-size: 70px; }
   #home-page {
