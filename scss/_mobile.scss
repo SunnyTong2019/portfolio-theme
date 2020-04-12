@@ -38,7 +38,10 @@
   }
 
   .nav-item {
-    transform: translate(100%, 0);
+    transform: translate(
+      -300%,
+      0
+    ); //put the element to the left, so when show, it comes from left to right
   }
 
   .text-large {
