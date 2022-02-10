@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/SunnyTong2019/portfolio-theme#readme",
   "dependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   }
 }
